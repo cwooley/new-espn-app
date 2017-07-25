@@ -9,6 +9,8 @@ let odb = new Player("Odell Beckham Jr", "Baton Rouge", "800", "WR", giants, 'ht
 
 let shep = new Player("Sterling Shepard", "Oklahoma city", "400", "WR", giants, "https://s.yimg.com/ny/api/res/1.2/bKcJDG.Mzj0qcX2uP4DdJw--/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en-US/homerun/sbnation.fantasy.vox.com/f54a0397653a7aebe4f811996b6d8318")
 
+let bMarsh = new Player("Brandon Marshall", "Somewhere", "22", "WR", giants, "http://www.trbimg.com/img-58b977fb/turbine/ct-jets-release-wr-brandon-marshall-20170303")
+
 function render(html, into){
   $(into).empty();
   $(into).append(html);
@@ -45,4 +47,37 @@ $('document').ready(function(){
     render (Player.makePlayerCards(), '.players-go-here');
   })
 
+  $('body').on('click', '.top-3-btn', function(){
+    teamID = parseInt(this.id.split('-')[2])
+    players = store.players.filter((player)=>{
+      return player.teamID === teamID
+    });
+    top3 = players.sort(function(a, b) {
+      var pointsA = parseInt(a.points)
+      var pointsB = parseInt(b.points)
+      if (pointsA < pointsB) {
+        return 1;
+      }
+      if (pointsA > pointsB) {
+        return -1;
+      }
+      return 0;
+    }).slice(0, 3)
+    HTML = top3.map((player)=>{
+      return player.makeCard();
+    }).join(' ')
+    HTML = `<div class="row" id="div-top-3-${teamID}"> ${HTML} </div>`
+    $(this).parent().append(HTML);
+    $(this).removeClass("top-3-btn")
+    $(this).addClass("top-3-btn-clicked")
+
+  })
+
+  $('body').on('click', '.top-3-btn-clicked', function(){
+
+    teamID = parseInt(this.id.split('-')[2])
+    $(`#div-top-3-${teamID}`).remove()
+    $(this).removeClass("top-3-btn-clicked")
+    $(this).addClass("top-3-btn")
+  })
 })

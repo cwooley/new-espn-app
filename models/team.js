@@ -10,7 +10,7 @@ function createTeams() {
     }
 
     makeLi(){
-      return `<li> ${this.city} ${this.name} </li>`
+      return `<li> ${this.city} ${this.name} <a class="waves-effect waves-light btn top-3-btn right" id="top-3-${this.id}">Top 3 Players</a></li>`
     }
 
     static makeTeamsHTML(){

@@ -17,7 +17,7 @@ function createPlayers(){
        let team = store.teams.find((team)=>{
          return team.id === this.teamID
        })
-       return ` <div class="card col s12 m6 l4" style="margin-left: 5px;">
+       return ` <div class="card col s12 m6 l4" style="margin-left: 5px; width: 30%;">
                 <div class="card-image waves-effect waves-block waves-light">
                   <img class="activator" src="${this.imageURL}">
                 </div>
