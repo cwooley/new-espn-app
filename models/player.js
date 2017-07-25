@@ -40,7 +40,23 @@ function createPlayers(){
          return player.makeCard();
        }).join(' ')
      }
+     static makeRowsOfCards(){
+       let index = 0;
+       let HTML = `<div class="row">`
+       store.players.forEach((player)=>{
+         if (index % 3 === 0){
+           HTML += `</div> <div class="row">`
+         }
+         HTML += player.makeCard();
+         index++
+       })
+       HTML += `</div>`
+
+       return HTML
+
+     }
   }
+
 }
 
 let Player = createPlayers()

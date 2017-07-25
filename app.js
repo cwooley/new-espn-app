@@ -27,7 +27,7 @@ $('document').ready(function(){
   $('.new-player-form').toggle();
   render(Team.makeTeamsHTML(), '.teams-go-here');
   render(Team.makeTeamsOptions(), '.team-select');
-  render (Player.makePlayerCards(), '.players-go-here');
+  render (Player.makeRowsOfCards(), '.players-go-here');
 
   $('body').on('click', '.card-revealer', function(){
     let cardID = `.cr-${this.id.split('-')[1]}`
