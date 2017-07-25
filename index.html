@@ -15,6 +15,7 @@
   <script src="./app.js"></script>
   </head>
   <body>
+
     <div class="container">
       <div class="row">
         <div class="col s12 m6">
@@ -24,7 +25,36 @@
           </ul>
         </div>
         <div class="col s12 m6">
-          <h3>Players</h3>
+          <h3>Players
+          <a class="show-new-player-form btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a></h3>
+          <div class="row">
+            <div class="new-player-form col s12">
+               <select class="team-select browser-default"></select>
+               <div class="input-field col s6">
+                <input id="name" type="text" class="validate">
+                <label for="name">Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="hometown" type="text" class="validate">
+                <label for="hometown">Hometown</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="points" type="text" class="validate">
+                <label for="points">Points</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="position" type="text" class="validate">
+                <label for="position">Position</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="imageURL" type="text" class="validate">
+                <label for="imageURL">imageURL</label>
+              </div>
+              <div class="input-field col s6">
+                <a class="submit-player waves-effect waves-light btn">submit</a>
+              </div>
+            </div>
+         </div>
           <div class="players-go-here flow-text">
 
           </div>

@@ -16,9 +16,19 @@ function createTeams() {
     static makeTeamsHTML(){
       return store.teams.map((team)=>{
           return team.makeLi();
-        }
-      ).join(' ')
+        }).join(' ')
     }
+
+    makeOpt(){
+      return `<option value="${this.id}">${this.name}</option>`
+    }
+
+    static makeTeamsOptions(){
+      return store.teams.map((team)=>{
+          return team.makeOpt();
+        }).join(' ')
+    }
+
   }
 }
 
