@@ -17,15 +17,15 @@ function createPlayers(){
        let team = store.teams.find((team)=>{
          return team.id === this.teamID
        })
-       return ` <div class="card col s12 m6 l4" style="margin-left: 5px; width: 30%;">
+       return ` <div class="card grey lighten-4 col s12 m6 l4" style="margin-left: 5px; width: 30%;">
                 <div class="card-image waves-effect waves-block waves-light">
                   <img class="activator" src="${this.imageURL}">
                 </div>
-                <div class="card-content">
-                  <span class="card-title grey-text text-darken-4">${this.name}<i class="material-icons right card-revealer" id="player-${this.id}">more_vert</i></span>
+                <div class="card-content" style="height: 100%;">
+                  <span class="card-title flow-text grey-text text-darken-4">${this.name}<i class="material-icons right card-revealer" id="player-${this.id}">more_vert</i></span>
                   <p>${team.name}</p>
                 </div>
-                <div class="card-reveal cr-${this.id}">
+                <div class="card-reveal z-depth-2 grey lighten-4 cr-${this.id}">
                   <ul class="flow-text">
                     <li>${this.hometown}</li>
                     <li>${this.points}</li>

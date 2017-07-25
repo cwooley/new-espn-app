@@ -3,19 +3,25 @@ const store = {players: [], teams: []}
 
 let giants = new Team("Giants", "New York")
 let eagles = new Team("Eagles", "Philadelphia")
-let redskins = new Team("redskins", "Washington")
+let redskins = new Team("Redskins", "Washington")
+let cowgirls = new Team("Cowgirls", "Dallas")
 
 let odb = new Player("Odell Beckham Jr", "Baton Rouge", "800", "WR", giants, 'http://assets.nydailynews.com/polopoly_fs/1.3351867.1500922977!/img/httpImage/image.jpg_gen/derivatives/article_750/giants-redskins-football.jpg')
 
 let shep = new Player("Sterling Shepard", "Oklahoma city", "400", "WR", giants, "https://s.yimg.com/ny/api/res/1.2/bKcJDG.Mzj0qcX2uP4DdJw--/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en-US/homerun/sbnation.fantasy.vox.com/f54a0397653a7aebe4f811996b6d8318")
 
-let bMarsh = new Player("Brandon Marshall", "Somewhere", "22", "WR", giants, "http://www.trbimg.com/img-58b977fb/turbine/ct-jets-release-wr-brandon-marshall-20170303")
+let bMarsh = new Player("Brandon Marshall", "Somewhere", "22", "WR", giants, "https://i.ytimg.com/vi/BRMp9NGX874/maxresdefault.jpg")
 
+let zeke = new Player("Ezikiel Elliot", "Texas?", "4", "RB", cowgirls, "https://media.tmz.com/2017/07/19/0719-ezekiel-elliott-getty-4.jpg" )
+let dez = new Player("Dez Bryant", "Texas?", "2", "WR", cowgirls, "https://media4.giphy.com/media/l0HluP3xZLyV637A4/200_s.gif")
+let crowder = new Player("Jamison Crowder", "Somewhere?", "12", "WR", redskins, "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Jamison_Crowder.jpg/250px-Jamison_Crowder.jpg")
+let dak = new Player("Dak Prescott", "Somewhere", "0", "QB", cowgirls, "http://images.performgroup.com/di/library/sporting_news/c3/cd/dak-prescott-cowboys-getty-ftr-121116_19nno1yviv3l2zxulq3d1jj52.jpg?t=-244472904&w=960&quality=70")
+let jones = new Player("Matt Jones", "Somewhere", "10", "RB", redskins, "https://www.gannett-cdn.com/usatsimg/image/thumb/540-390nw/8821597.jpg")
 function render(html, into){
   $(into).empty();
   $(into).append(html);
 }
-
+let eli = new Player("Eli Manning", "Tenesee?", "999", "QB", giants, "http://assets.nydailynews.com/polopoly_fs/1.1017593.1328502882!/img/httpImage/image.jpg_gen/derivatives/article_750/eli-trophy.jpg")
 
 $('document').ready(function(){
   $('.new-player-form').toggle();
