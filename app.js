@@ -36,10 +36,9 @@ $('document').ready(function(){
     console.log(name)
     let hometown = $('#hometown').val()
     let points = $('#points').val()
-    let position = $('#postion').val()
-    debugger
+    let position = $('#position').val()
     let team = store.teams.find((team)=>{
-      return team.id === $('.team-select option:selected').val()
+      return `${team.id}` === $('.team-select option:selected').val()
     })
     let imageURL = $('#imageURL').val()
     let player = new Player(name, hometown, points, position, team, imageURL)
